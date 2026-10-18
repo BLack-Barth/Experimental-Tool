@@ -1,9 +1,11 @@
-def status_code():
+def status_code(url):
     import requests
     from rich import print
+    print('-'*50)
+    print(' '*18+"[bold blue]Status Code")
+    print('-'*50)
     try:
-        url = input('Enter the url: ')
-        response = requests.get(url , timeout=10)
+        response = requests.get(url, timeout=10)
         response.raise_for_status()
         if response.status_code == 200:
             print(f"[yellow]URL:[/] {url}[green] is OK[/] | status code : {response.status_code}")
