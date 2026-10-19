@@ -20,8 +20,8 @@ if arg.ip:
     from Scripts.get_ip import host_ip
     host_ip(arg.url)
 if arg.fp:
-    from Scripts import fingerprinting
-    fingerprinting()
+    from Scripts.fingerprinting import fingerprinting
+    fingerprinting(arg.url)
 if arg.sc:
     from Scripts.status_code import status_code
     status_code(arg.url)

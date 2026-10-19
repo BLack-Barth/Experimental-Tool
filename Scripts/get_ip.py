@@ -15,12 +15,12 @@ def host_ip(url):
         print(f"[purple]Target Domain :[/] {domain}")
         print(f'[purple]Domain IP :[/] {ip_domain}')
 
+    except ValueError as error :
+        print(f'[red]Invalid URL format:[/] {error}')
+    except OSError as error :
+        print(f'[red]System network error:[/] {error}')
     except socket.gaierror:
         print(f'[red]Could not resolve the domain:{domain}[/]')
         print('[green]Some help:\n' \
         '\t   Enter the domain without(https://..)\n' \
         '\t   Check the domain name clearly ')
-    except ValueError as error :
-        print(f'[red]Invalid URL format:[/] {error}')
-    except OSError as error :
-        print(f'[red]System network error:[/] {error}')

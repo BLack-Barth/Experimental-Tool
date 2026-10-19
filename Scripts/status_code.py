@@ -11,12 +11,14 @@ def status_code(url):
             print(f"[yellow]URL:[/] {url}[green] is OK[/] | status code : {response.status_code}")
         else :
                 print(f"[purple]URL:[/] {url}[red] is NOT OK [/]| status code : {response.status_code}")
-    except requests.exceptions.ConnectionError:
-        print("[red]Connection failed. Check the URL or your internet connection.[/]")
+
 
     except requests.exceptions.Timeout:
         print("[red]Request timed out. The server may be slow or unreachable.[/]")
 
+    except requests.exceptions.ConnectionError:
+        print("[red]Connection failed. Check the URL or your internet connection.[/]")
+        
     except requests.exceptions.HTTPError as error:
         print(f"[red]HTTP error:[/] {error}")
 

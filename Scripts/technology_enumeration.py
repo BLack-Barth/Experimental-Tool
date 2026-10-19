@@ -7,7 +7,6 @@ def technology_enumeration(url):
     try:
         headers = {
     "User-Agent": (
-        "BugBounty-Hunter-BLackBart "
         "Mozilla/5.0 (X11; Linux x86_64) " 
         "AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/124.0.0.0 Safari/537.36"
@@ -19,11 +18,12 @@ def technology_enumeration(url):
 
         response.raise_for_status()
         
+    except requests.exceptions.ConnectTimeout:
+        print("[red]Connection timed out, The server may be slow or unreachable.[/]")
+        
     except requests.exceptions.ConnectionError:
         print("[red]Connection failed. Check the URL or your internet connection.[/]")
 
-    except requests.exceptions.ConnectTimeout:
-        print("[red]Connection timed out, The server may be slow or unreachable.[/]")
 
     except requests.exceptions.HTTPError as http_error:
         print(f'[red]HTTP Error:[/] {http_error}')
