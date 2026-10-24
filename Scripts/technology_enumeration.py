@@ -14,7 +14,7 @@ def technology_enumeration(url):
 }
         response = requests.get(url ,headers=headers , timeout= 10)
         for key,value in response.headers.items():
-            print(f'[yellow]{key}[/] : {value}')
+            print(f'[purple]{key}[/] : {value}')
 
         response.raise_for_status()
         
