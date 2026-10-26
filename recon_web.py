@@ -1,10 +1,11 @@
+#!/usr/bin/env python3
 import argparse
 import Scripts
 from pyfiglet import print_figlet
 
-print('-'*30)
-print_figlet("recon")
-print('-'*30)
+print('-'*50)
+print_figlet("Recon Web")
+print('-'*50)
 parser = argparse.ArgumentParser(description="Network Reconnaissance")
 parser.add_argument('-u','--url',required=True,help="Target URL")
 parser.add_argument('-ip',action='store_true',help="Acquire target IP")

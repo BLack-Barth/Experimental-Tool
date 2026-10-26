@@ -9,11 +9,11 @@ def host_ip(url):
         parsed_url = urlsplit(url if '://' in url else f"//{url}")# > example.com:8000
         domain = parsed_url.hostname # > exmaple.com
         if not domain :
-            print("[red]Invalid URL: hostname is missing.[/]")
+            print("\t[red][-] Invalid URL: hostname is missing.[/]")
             return
         ip_domain = socket.gethostbyname(domain)
-        print(f"[purple]Target Domain :[/]     {domain}")
-        print(f'[purple]Domain IP Address :[/] {ip_domain}')
+        print(f"\t[green][+][/] [purple]Target Domain :[/]     {domain}")
+        print(f'\t[green][+][/] [purple]Domain IP Address :[/] {ip_domain}')
 
     except ValueError as error :
         print(f'[red]Invalid URL format:[/] {error}')

@@ -8,9 +8,9 @@ def status_code(url):
         response = requests.get(url, timeout=10)
         response.raise_for_status()
         if response.status_code == 200:
-            print(f"[purple]URL:[/] {url}[green] is OK[/] |[purple] status code:[/] {response.status_code}")
+            print(f"\t[green][+][/] [purple]URL:[/] {url}[green] is OK[/] |[purple] status code:[/] {response.status_code}")
         else :
-                print(f"[purple]URL:[/] {url}[red] is NOT OK [/]| status code : {response.status_code}")
+                print(f"\t[red][-][/] [purple]URL:[/] {url}[red] is NOT OK [/]| status code : {response.status_code}")
 
 
     except requests.exceptions.Timeout:
