@@ -12,6 +12,8 @@ parser.add_argument('-ip',action='store_true',help="Acquire target IP")
 parser.add_argument('-fp',action='store_true',help="Exploring Server Identity")
 parser.add_argument('-sc',action='store_true',help="Monitoring Readiness and Site Response")
 parser.add_argument('-te',action='store_true',help="Uncovering Website Technologies and Frameworks")
+parser.add_argument('-p',action='store_true',help="Searching for target paths")
+parser.add_argument('-s',action='store_true',help="Searching for target subdomains")
 arg = parser.parse_args()
 
 if arg :
@@ -29,4 +31,9 @@ if arg.sc:
 if arg.te:
     from Scripts.technology_enumeration import technology_enumeration
     technology_enumeration(arg.url)
-
+if arg.p:
+    from Scripts.paths import paths
+    paths(arg.url)
+if arg.s:
+    from Scripts.subdomain import subdomain
+    subdomain(arg.url)
